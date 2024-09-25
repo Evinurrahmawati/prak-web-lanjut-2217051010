@@ -21,7 +21,6 @@
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
-            
         }
         .form-group {
             margin-bottom: 15px;
@@ -37,7 +36,7 @@
             padding: 8px;
             border: 1px solid #ddd;
             border-radius: 4px;
-            box-sizing: border-box; /* Adds padding and border to the element's total width and height */
+            box-sizing: border-box;
         }
         input[type="submit"] {
             background-color: #90caf9;
@@ -49,7 +48,11 @@
             background-color: #80caf7;
         }
         h2 {
-            text-align: center; /* Center align the title */
+            text-align: center;
+        }
+        .text-danger {
+            color: red;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -58,19 +61,30 @@
     <form action="/user/store" method="POST">
         <h2>Create User</h2>
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
         <div class="form-group">
             <label for="nama">Nama :</label>
-            <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Anda" required>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan Nama Anda">
+            @foreach ($errors->get('nama') as $msg)
+                <p class="text-danger">{{ $msg }}</p>
+            @endforeach
         </div>
 
         <div class="form-group">
             <label for="npm">NPM :</label>
-            <input type="text" id="npm" name="npm" placeholder="Masukkan NPM Anda" required>
+            <input type="text" id="npm" name="npm" placeholder="Masukkan NPM Anda">
+            @foreach ($errors->get('npm') as $msg)
+                <p class="text-danger">{{ $msg }}</p>
+            @endforeach
         </div>
 
         <div class="form-group">
-            <label for="kelas">Kelas :</label>
-            <input type="text" id="kelas" name="kelas" placeholder="Masukkan Kelas Anda" required>
+            <label for="id_kelas">Kelas :</label><br>
+            <select name="kelas_id" id="kelas_id">
+                @foreach($kelas as $kelasItem)
+                <option value="{{$kelasItem->id}}">{{$kelasItem->nama_kelas}}</option>
+                @endforeach
+            </select>
         </div>
 
         <input type="submit" value="Submit">
