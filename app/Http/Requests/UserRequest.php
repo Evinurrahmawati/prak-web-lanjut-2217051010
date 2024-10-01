@@ -24,7 +24,7 @@ class UserRequest extends FormRequest
         return [
             'nama' => 'required',
             'npm' => 'required',
-            'kelas_id' => 'required'
+            'kelas_id' => 'required' 
         ];
     }
 }
