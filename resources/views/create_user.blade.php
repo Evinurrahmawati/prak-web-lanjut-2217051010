@@ -13,7 +13,7 @@
         <label for="npm">NPM : </label>
         <input type="text" id="npm" name="npm" class="form-control" placeholder="Masukkan NPM"><br>
         
-        <label for="kelas">Kelas :</label>
+        <label for="kelas">Kelas:</label>
         <select name="kelas_id" id="kelas_id">
             @foreach ($kelas as $kelasItem)
             <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
