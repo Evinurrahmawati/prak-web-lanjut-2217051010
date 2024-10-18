@@ -1,14 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div>
+    <div class="container text-center">
+        <h1 class="text-center">Input Data</h1>
     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="nama">Nama:</label>
-        <input type="text" id="nama" name="nama"><br>
+        <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukkan nama"><br>
  
         <label for="npm">NPM : </label>
-        <input type="text" id="npm" name="npm"><br>
+        <input type="text" id="npm" name="npm" class="form-control" placeholder="Masukkan NPM"><br>
         
         <label for="kelas">Kelas :</label>
         <select name="kelas_id" id="kelas_id">

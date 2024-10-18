@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List User</title>
     <style>
-        body {
+     /* Umum untuk halaman */
+     body {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -47,116 +48,106 @@
         input[type="submit"]:hover {
             background-color: #80caf7;
         }
-        h2 {
+        h2, h1 {
             text-align: center;
+            margin-bottom: 20px; 
         }
-        .text-danger {
-            color: red;
+
+        /* Tabel */
+        table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #a4c1de
+        }
+
+        th, td {
+            padding: 20px 35px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        thead th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: bold;
+        }
+
+        tbody tr:hover {
+            background-color:  #a4c1de;
+        }
+
+        .table-hover tbody tr:hover td {
+            background-color:  #aec1d3;
+        }
+
+        /* Gaya gambar pengguna */
+        .foto-user {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tombol aksi */
+        .btn {
+            margin: 2px;
+            padding: 5px 10px;
             font-size: 12px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
         }
 
-    /* Tabel */
-/* Tabel */
-table {
-    width: 90%; /* Lebar tabel lebih fleksibel */
-    max-width: 1000px; /* Lebar maksimal agar tidak terlalu lebar */
-    border-collapse: collapse; /* Menggabungkan border tabel dan cell */
-    margin: 20px auto; /* Pusatkan tabel */
-    background-color: #ffffff; /* Warna latar belakang tabel */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan di sekitar tabel */
-    border-radius: 8px; /* Membuat sudut tabel melengkung */
-    overflow: hidden; /* Untuk menghindari teks keluar dari batas */
-}
+        .btn-add {
+            background-color: #007bff;
+            
+        }
 
-th, td {
-    padding: 12px 20px; /* Ruang di dalam sel yang lebih besar */
-    text-align: left; /* Perataan teks di kiri */
-    border-bottom: 1px solid #dddddd; /* Tambahkan garis pada setiap baris bawah */
-    font-family: 'Arial', sans-serif; /* Font modern */
-}
+        .btn-add:hover {
+            background-color: #0069d9;
+        }
 
-th {
-    background-color: #2c3e50; /* Warna latar belakang header */
-    color: white; /* Warna teks header */
-    font-weight: 600; /* Tebal teks header */
-    text-transform: uppercase; /* Huruf besar di header */
-}
+        /* Warna tombol aksi */
+        .btn-edit {
+            background-color: #007bff;
+        }
 
-tr {
-    transition: background-color 0.3s ease; /* Transisi halus untuk hover */
-}
+        .btn-edit:hover {
+            background-color: #0069d9;
+        }
 
-tr:hover {
-    background-color: #f1f1f1; /* Efek hover untuk baris tabel */
-}
+        .btn-detail {
+            background-color: #ffc107;
+        }
 
-td {
-    color: #2c3e50; /* Warna teks utama */
-    font-size: 14px; /* Ukuran teks */
-}
+        .btn-detail:hover {
+            background-color: #e0a800;
+        }
 
-@media (max-width: 768px) {
-    table {
-        width: 100%; /* Tabel penuh di layar kecil */
-    }
+        .btn-delete {
+            background-color: #dc3545;
+        }
 
-    th, td {
-        padding: 10px; /* Ruang sel lebih kecil */
-        font-size: 12px; /* Ukuran teks lebih kecil */
-    }
-}
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
 
-/* Tombol */
-.btn {
-    display: inline-block;
-    margin: 10px 0; /* Jarak antar tombol dan elemen lainnya */
-    padding: 10px 20px; /* Ukuran padding tombol */
-    background-color: #3498db; /* Warna latar tombol */
-    color: white; /* Warna teks tombol */
-    font-family: 'Arial', sans-serif; /* Font */
-    font-size: 14px; /* Ukuran teks */
-    text-decoration: none; /* Menghilangkan garis bawah */
-    border-radius: 8px; /* Membuat sudut tombol melengkung */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan pada tombol */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transisi saat hover */
-}
+        /* Kontainer dan tata letak */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+        }
 
-.btn:hover {
-    background-color: #2980b9; /* Warna latar saat hover */
-    transform: translateY(-2px); /* Efek naik saat hover */
-}
+        .mb-3 {
+            margin-bottom: 15px;
+        }
 
-.btn:active {
-    transform: translateY(0); /* Kembali ke posisi semula saat diklik */
-}
 
-.btn-primary {
-    background-color: #3498db; /* Warna tombol utama (Tambah Pengguna Baru) */
-}
-
-.btn-warning {
-    background-color: #e67e22; /* Warna tombol detail (oranye) */
-}
-
-.container {
-    width: 90%; /* Membatasi lebar container */
-    max-width: 1000px;
-    margin: 20px auto; /* Pusatkan konten */
-}
-
-.mb-3 {
-    margin-bottom: 20px; /* Jarak bawah tombol */
-}
-
-.mt-2 {
-    margin-top: 10px; /* Jarak atas tombol */
-}
-
-.m-3 {
-    margin: 20px; /* Margin umum */
-}
-
-    
 
     </style>
 </head>
