@@ -120,6 +120,7 @@ h1 {
 
 /* Styling untuk card */
 .card {
+    margin: 15px; /* Tambahkan margin di sekitar card */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -132,9 +133,9 @@ h1 {
 }
 
 .card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    width: 95%;
+    height: 250px; /* Sesuaikan tinggi gambar */
+    object-fit: cover; /* Pastikan gambar tetap sesuai proporsi dan terpotong dengan rapi */
     border-bottom: 1px solid #ddd;
 }
 
@@ -177,12 +178,12 @@ h1 {
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between; /* Jarak antara card */
 }
 
 .col-md-4 {
-    flex: 0 0 30%;
-    max-width: 30%;
+    flex: 0 0 calc(33.333% - 30px); /* Perhitungan untuk mempertimbangkan margin */
+    max-width: calc(33.333% - 30px); /* Ukuran card mempertimbangkan margin */
     margin-bottom: 20px;
 }
 
