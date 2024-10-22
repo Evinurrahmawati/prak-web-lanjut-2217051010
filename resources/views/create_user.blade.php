@@ -12,6 +12,12 @@
  
         <label for="npm">NPM : </label>
         <input type="text" id="npm" name="npm" class="form-control" placeholder="Masukkan NPM"><br>
+
+        <label for="jurusan">Jurusan : </label>
+        <input type="text" id="jurusan" name="jurusan" class="form-control" placeholder="Masukkan Jurusan"><br>
+
+        <label for="semester">semester : </label>
+        <input type="text" id="semester" name="semester" class="form-control" placeholder="Masukkan Semester"><br>
         
         <label for="kelas">Kelas:</label>
         <select name="kelas_id" id="kelas_id">

@@ -65,6 +65,8 @@ class UserController extends Controller
             'npm' => 'required',
             'kelas_id' => 'required',
             'foto' => 'image|file|max:2048', // Validasi foto
+            'jurusan' => 'required',
+            'semester' => 'required',
         ]);
 
         // Proses upload foto
@@ -80,6 +82,8 @@ class UserController extends Controller
         'npm' => $request->input('npm'),
         'kelas_id' => $request->input('kelas_id'),
         'foto' => $filename, 
+        'jurusan' => $request->input('jurusan'),
+        'semester' => $request->input('semester'),
         // Menyimpan path foto
         ]);
 
@@ -114,7 +118,8 @@ class UserController extends Controller
             $user->nama=$request ->nama;
             $user->npm=$request ->npm;
             $user->kelas_id=$request ->kelas_id;
-    
+            $user->jurusan=$request ->jurusan;
+            $user->semester=$request ->semester;
             if($request->hasFile('foto')){
                 $filename=time() . '_' . $request ->foto->extension();
                 $request ->foto->move(public_path('img/'), $filename);
