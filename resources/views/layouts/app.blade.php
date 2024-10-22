@@ -54,98 +54,145 @@
         }
 
         /* Tabel */
-        table {
-            width: 100%;
-            max-width: 1000px;
-            margin: 20px auto;
-            border-collapse: collapse;
-            background: #a4c1de
-        }
+       /* Container utama */
+.container {
+    margin-top: 20px;
+}
 
-        th, td {
-            padding: 20px 35px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
 
-        thead th {
-            background-color: #2c3e50;
-            color: white;
-            font-weight: bold;
-        }
+/* Tombol Tambah Pengguna */
+.add-btn-container {
+    margin-bottom: 20px;
+}
 
-        tbody tr:hover {
-            background-color:  #a4c1de;
-        }
+.btn-add {
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
 
-        .table-hover tbody tr:hover td {
-            background-color:  #aec1d3;
-        }
+.btn-add:hover {
+    background-color: #0056b3;
+}
 
-        /* Gaya gambar pengguna */
-        .foto-user {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+/* Card Layout */
+/* Mengatur margin dan padding agar tampilan lebih rapi */
+body {
+    background-color: #eaf2f8;
+    font-family: Arial, sans-serif;
+}
 
-        /* Tombol aksi */
-        .btn {
-            margin: 2px;
-            padding: 5px 10px;
-            font-size: 12px;
-            border-radius: 5px;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            cursor: pointer;
-        }
+.container {
+    margin-top: 30px;
+}
 
-        .btn-add {
-            background-color: #007bff;
-            
-        }
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-        .btn-add:hover {
-            background-color: #0069d9;
-        }
+.add-btn-container {
+    margin-bottom: 20px;
+}
 
-        /* Warna tombol aksi */
-        .btn-edit {
-            background-color: #007bff;
-        }
+.btn-add {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
 
-        .btn-edit:hover {
-            background-color: #0069d9;
-        }
+.btn-add:hover {
+    background-color: #0056b3;
+}
 
-        .btn-detail {
-            background-color: #ffc107;
-        }
+/* Styling untuk card */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    transition: transform 0.3s;
+}
 
-        .btn-detail:hover {
-            background-color: #e0a800;
-        }
+.card:hover {
+    transform: scale(1.05);
+}
 
-        .btn-delete {
-            background-color: #dc3545;
-        }
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
 
-        .btn-delete:hover {
-            background-color: #c82333;
-        }
+.card-body {
+    padding: 15px;
+}
 
-        /* Kontainer dan tata letak */
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-        }
+.card-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
 
-        .mb-3 {
-            margin-bottom: 15px;
-        }
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    margin-right: 10px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+/* Styling untuk layout grid */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-md-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
 
 
 
